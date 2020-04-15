@@ -10,11 +10,13 @@ module.exports = {
       },
       name: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
       },
       codeRole: {
         type: Sequelize.STRING(5),
-        allowNull: false
+        allowNull: false,
+        unique: true
       },
       isDelete: {
         type: Sequelize.TINYINT(1),

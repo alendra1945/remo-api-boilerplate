@@ -17,6 +17,7 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'NO ACTION',
         allowNull: false,
+        unique: true,
         defaultValue: 3
       },
       username: {
