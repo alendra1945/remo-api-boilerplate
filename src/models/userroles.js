@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     isDelete: DataTypes.TINYINT
   }, {})
   userRoles.associate = function (models) {
-    // associations can be defined here
+    userRoles.hasMany(models.users, { foreignKey: 'roleId' })
   }
   return userRoles
 }
