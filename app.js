@@ -12,7 +12,7 @@ App.use(morgan('tiny'))
 /* BodyParser */
 App.use(bodyParser.urlencoded({ extended: false }))
 
-/* CORS */
+/* CORS HEADER */
 /*
   Spesific Origin With
   const whiteList = ['http://example1.com', 'http://example2.com']
@@ -24,7 +24,7 @@ const corsOptions = {
       if (whiteList.indexOf(origin) !== -1) {
         callback(null, true)
       } else {
-        callback(new Error('Not Allowed By Cors'))
+        callback(new Error('Not Allowed By CORS'))
       }
     } else {
       callback(null, true)
@@ -55,4 +55,5 @@ App.use((err, req, res, next) => {
     message: err.message
   })
 })
+
 module.exports = App
