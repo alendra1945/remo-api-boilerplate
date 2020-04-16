@@ -6,6 +6,8 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const path = require('path')
 
+/* Routes */
+const UserRouters = require('./src/routes/users')
 /* Logger */
 App.use(morgan('tiny'))
 
@@ -37,12 +39,14 @@ App.use(cors(corsOptions))
 /* Static Files */
 App.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
-App.use('/', (req, res, next) => {
+App.get('/', (req, res, next) => {
   res.send({
     success: true,
     message: 'Get / Success'
   })
 })
+
+App.use('/api/users/', UserRouters)
 
 /* Handling Not Found Routes */
 App.use((req, res, next) => {

@@ -17,12 +17,12 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'NO ACTION',
         allowNull: false,
-        unique: true,
         defaultValue: 3
       },
       username: {
         type: Sequelize.STRING(80),
-        allowNull: false
+        allowNull: false,
+        unique: true
       },
       password: {
         type: Sequelize.STRING(80),

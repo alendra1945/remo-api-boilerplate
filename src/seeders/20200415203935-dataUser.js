@@ -5,7 +5,7 @@ module.exports = {
     return queryInterface.bulkInsert('users', [
       {
         roleId: 1,
-        username: 'mydmin',
+        username: 'mydmin2',
         password: bcrypt.hashSync('myadmin123'),
         status: 1
       }
